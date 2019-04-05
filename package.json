@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,8 @@
     "@tensorflow/tfjs": "^1.0.4",
     "lodash": "^4.17.11",
     "shuffle-seed": "^1.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
