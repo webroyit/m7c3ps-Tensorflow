@@ -11,5 +11,23 @@ let { features, labels, testFeatures, testLabels } = loadCSV('kc_house_data.csv'
     labelColumns: ['price']
 });
 
-console.log(testFeatures);
-console.log(testLabels);
+//console.log(testFeatures);
+//console.log(testLabels);
+
+const feature = tf.tensor([
+    [-121, 47],
+    [-121.2, 46.5],
+    [-122, 46.4],
+    [-120.9, 46.7]
+]);
+
+const label = tf.tensor([
+    [200],
+    [250],
+    [215],
+    [240]
+]);
+
+const predictionPoint = tf.tensor([-121, 47]);
+
+console.log(predictionPoint);
