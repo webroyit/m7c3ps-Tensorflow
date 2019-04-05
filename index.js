@@ -1,4 +1,5 @@
 const loadCSV = require('./load-csv');
+const tf = require('@tensorflow/tfjs');
 
 // shuffle -  randonize the data
 // splitTest - get number of data
@@ -10,4 +11,5 @@ let { features, labels, testFeatures, testLabels } = loadCSV('kc_house_data.csv'
     labelColumns: ['price']
 });
 
-console.log(features);
+console.log(testFeatures);
+console.log(testLabels);
