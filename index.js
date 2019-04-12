@@ -29,9 +29,10 @@ const label = tf.tensor([
 ]);
 
 const predictionPoint = tf.tensor([-121, 47]);
+const k = 2;
 
 // using the distance formula
-const result = feature
+feature
     // find the difference bewteen each row and the predictionPoint
     .sub(predictionPoint)
     // raise it to the power of two
@@ -44,5 +45,13 @@ const result = feature
     .expandDims(1)
     // combine tensor
     .concat(label, 1)
+    // break up this tensor into group of tensors
+    .unstack()
+    // this is js method
+    .sort((a, b) => a > b ? 1 : -1)
+    // this is js method
+    .slice(0, k)
+    // add up the total and then divide the total by k
+    .reduce((acc, pair) => acc + pair, 0) / k;
 
-console.log(result);
+feature.print();
