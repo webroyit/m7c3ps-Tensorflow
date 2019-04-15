@@ -48,8 +48,24 @@ function knn(features, labels, predictionPoint, k){
 features = tf.tensor(features);
 labels = tf.tensor(labels);
 
+/*
 testFeatures.forEach((testPoint, i) => {
     const result = knn(features, labels, tf.tensor(testPoint), 10);
     const err = (testLabels[i][0] - result) / testLabels[i][0];
     console.log("Result", err);
 });
+*/
+
+const numbers = tf.tensor([
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]);
+
+// find the average
+const { mean, variance } = tf.moments(numbers, 0);
+mean.print();
+variance.print();
+
+// find standard deviation
+numbers.sub(mean).div(variance.pow(.5)).print();
