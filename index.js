@@ -43,3 +43,10 @@ function knn(features, labels, predictionPoint, k){
         // add up the total and then divide the total by k
         .reduce((acc, pair) => acc + pair, 0) / k;
 }
+
+features = tf.tensor(features);
+labels = tf.tensor(labels);
+testFeatures = tf.tensor(testFeatures[0]);
+
+const result = knn(features, labels, testFeatures, 10);
+console.log("Result", result, testLabels[0][0]);
