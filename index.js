@@ -49,4 +49,5 @@ labels = tf.tensor(labels);
 testFeatures = tf.tensor(testFeatures[0]);
 
 const result = knn(features, labels, testFeatures, 10);
-console.log("Result", result, testLabels[0][0]);
+const err = (testLabels[0][0] - result) / testLabels[0][0];
+console.log("Result", err);
